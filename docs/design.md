@@ -18,7 +18,7 @@ About, Resources, and FAQs add context and portfolio value.
 
 | Contributor   | Main responsibility                        |
 | ------------- | ------------------------------------------ |
-| John Paintsil | Vulnerability Awareness & Triage workspace |
+| Kosolume      | Vulnerability Awareness & Triage workspace |
 | Sania Anwar   | Product & Technology workspace             |
 
 Kosolume also created the initial mockups and index, shared layout, supporting
