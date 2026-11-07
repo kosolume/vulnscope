@@ -10,8 +10,6 @@ security professionals explore publicly disclosed vulnerabilities and
 organize locally managed security reviews.
 
 - **Live Site:** [VulnScope](https://vulnscope-d4xk.onrender.com/)
-- **Repository:** [kosolume/vulnscope](https://github.com/kosolume/vulnscope)
-- **Final Review:** October 18, 2026
 
 ## Screenshot
 
@@ -19,16 +17,7 @@ organize locally managed security reviews.
 
 ![homepage thumbnail](public/images/screenshots/thumbnail.png)
 
-See [development screenshots](docs/dev.md) and [Figma design mockups](docs/mockup.md).
-
-## Authors
-
-### John Paintsil
-
-- GitHub: [kosolume](https://github.com/kosolume)
-- Responsibility: Vulnerability Awareness & Triage workspace.
-- Shared work: initial Figma mockups, site layout, supporting pages,
-  documentation, and deployment coordination.
+## Co-Author
 
 ### Sania Anwar
 
@@ -36,7 +25,6 @@ See [development screenshots](docs/dev.md) and [Figma design mockups](docs/mocku
 - Responsibility: Product & Technology workspace.
 - Includes the Products collection, import, API, browser views, and forms.
 
-**Course Page:** [CS 5610 — Web Development](https://johnguerra.co/classes/webDevelopment_online_fall_2026/)
 
 ## Project Objective
 
@@ -333,25 +321,9 @@ checks. Eight sampled text/background color combinations exceeded 4.5:1.
 These checks do not establish full accessibility compliance; the latest
 homepage search and Products views need their own final manual confirmation.
 
-## Peer Code Review
-
-John Paintsil submitted a peer review of
-[OpenSlots](https://github.com/OpenSlots-Dev/openslots), developed by
-Ankita Mandalam and Agilan Balaraman.
-
-- **Submitted:** October 28, 2026.
-- **Pull request:** [#12 — Handle malformed anonymous cookies](https://github.com/OpenSlots-Dev/openslots/pull/12).
-- **Contribution:** A small middleware improvement with a brief inline
-  comment and a recommendation for automated cookie-validation tests.
-- **Status:** Open; awaiting maintainer review as of October 28.
-
-See the [review details and validation](docs/validation.md#peer-code-review).
-
 ## Presentation and Demo Video
 
-- **Google Slides Presentation (John):** [John's presentation](https://docs.google.com/presentation/d/13cx7LqqmMWwijsvRJpnUI7jwwlo0HvpCHUYRvUAL6HQ/edit)
-- **Google Slides Presentation (Sania):** [Sania's presentation](https://docs.google.com/presentation/d/1bH6_mhe3n3b-y8X_ObTOzPIioFuBz1YehroUM92Tutg/edit?usp=sharing)
-- **Published video demo (Bluesky):** [Watch the VulnScope demo](https://bsky.app/profile/jpaintsil.bsky.social/post/3my54rlsyjc2o) — published October 18, 2026.
+- **Published video demo (Bluesky):** [Watch the VulnScope demo](https://bsky.app/profile/jpaintsil.bsky.social/post/3my54rlsyjc2o)
 
 ## Generative AI Disclosure
 
@@ -364,9 +336,9 @@ See the [review details and validation](docs/validation.md#peer-code-review).
 
 ### How Generative AI Was Used
 
-- John Paintsil — ChatGPT was used as an iterative development assistant by supporting tasks such as reviewing project requirements, planning and organizing information architecture, and refining design documentation to enhance overall project quality and accessibility.
+- ChatGPT was used as an iterative development assistant by supporting tasks such as reviewing project requirements, planning and organizing information architecture, and refining design documentation to enhance overall project quality and accessibility.
 
-- Sania Anwar - I used Claude to organize the README and design documentation on github. I also used it to help me with the database connection issues.
+- I used Claude to organize the README and design documentation on GitHub. I also used it to help me with the database connection issues.
 
 ## License
 
