@@ -5,7 +5,7 @@ Files are stored in `public/images/screenshots/mockups/` and `public/images/scre
 from [running-application screenshots](dev.md) and do not prove that a
 feature has been implemented.
 
-### John - Mockups:
+### Kosolume - Mockups:
 
 ### Homepage
 
