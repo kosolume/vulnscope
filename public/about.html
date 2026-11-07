@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Page metadata and responsive sizing. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about VulnScope, its cybersecurity objectives, and its public data sources."
+    />
+    <title>About — VulnScope</title>
+
+    <!-- Browser tab branding. -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Load the shared font. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared layout and page styles. -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <script type="module" src="/js/layout.js"></script>
+  </head>
+
+  <body>
+    <!-- Keyboard shortcut to content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared header. -->
+    <header id="site-header" class="site-header"></header>
+
+    <main id="main-content" class="page-container" tabindex="-1">
+      <!-- Page introduction. -->
+      <h1>About VulnScope</h1>
+      <p class="page-intro">
+        Making cybersecurity vulnerability information easier to understand,
+        organize, and act on.
+      </p>
+
+      <!-- Platform purpose. -->
+      <section aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">Why VulnScope Exists</h2>
+        <p>
+          Security information can be difficult to interpret. VulnScope is
+          designed to bring public vulnerability records, technology
+          information, and personal review workflows into an approachable
+          workspace.
+        </p>
+      </section>
+
+      <!-- Intended audiences. -->
+      <section aria-labelledby="audience-heading">
+        <h2 id="audience-heading">Who It Is For</h2>
+
+        <div class="content-grid">
+          <article class="info-card">
+            <h3>Everyday Technology Users</h3>
+            <p>
+              Understand security terminology and explore issues that may be
+              relevant to the technology you use.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Cybersecurity Students</h3>
+            <p>
+              Explore real vulnerability records and connect cybersecurity
+              concepts to practical examples.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Security Professionals</h3>
+            <p>
+              Review technical information and organize locally managed records,
+              review statuses, and notes.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Core platform workflow. -->
+      <section aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">How VulnScope Works</h2>
+
+        <ol class="workflow-visual" aria-label="VulnScope workflow">
+          <li>
+            <!-- Decorative workflow icon. -->
+            <div class="workflow-icon">
+              <svg
+                viewBox="0 0 64 64"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="27" cy="27" r="14" />
+                <path d="m38 38 14 14" />
+              </svg>
+            </div>
+
+            <h3>1. Explore</h3>
+            <p>
+              Search imported CVEs, apply filters, and open the source
+              references.
+            </p>
+          </li>
+
+          <li>
+            <!-- Decorative workflow icon. -->
+            <div class="workflow-icon">
+              <svg
+                viewBox="0 0 64 64"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="14" y="10" width="36" height="44" rx="5" />
+                <path d="m22 31 6 6 14-15M23 45h18" />
+              </svg>
+            </div>
+
+            <h3>2. Review</h3>
+            <p>
+              Read record details and use Resources to understand the
+              terminology and severity context.
+            </p>
+          </li>
+
+          <li>
+            <!-- Decorative workflow icon. -->
+            <div class="workflow-icon">
+              <svg
+                viewBox="0 0 64 64"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="12" y="12" width="40" height="40" rx="5" />
+                <path d="M22 23h20M22 32h20M22 41h12" />
+              </svg>
+            </div>
+
+            <h3>3. Track</h3>
+            <p>
+              Create local review records, maintain notes, and update their
+              review status.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Public sources and local records. -->
+      <section class="content-copy" aria-labelledby="data-heading">
+        <h2 id="data-heading" tabindex="-1">About the Data</h2>
+
+        <p>
+          VulnScope is designed around public data from the National
+          Vulnerability Database (NVD), maintained by the National Institute of
+          Standards and Technology (NIST).
+        </p>
+
+        <p>
+          The current vulnerability workspace uses an imported sample of NVD CVE
+          records.
+        </p>
+
+        <!-- Distinguish record origins visually. -->
+        <div class="data-comparison">
+          <article class="data-origin">
+            <p class="origin-label">Public source</p>
+            <h3>Imported NVD records</h3>
+            <p>A development sample of publicly disclosed vulnerabilities.</p>
+
+            <ul>
+              <li>Browse descriptions, severity, and source references.</li>
+              <li>Read-only within VulnScope.</li>
+              <li>Reflects the last successful import.</li>
+            </ul>
+          </article>
+
+          <article class="data-origin data-origin-local">
+            <p class="origin-label">Your workspace</p>
+            <h3>Local review records</h3>
+            <p>Your own vulnerability records, notes, and review statuses.</p>
+
+            <ul>
+              <li>Create, read, edit, and delete your records.</li>
+              <li>
+                Access is associated with the creating browser's workspace
+                cookie.
+              </li>
+              <li>Local changes leave the public NVD records unchanged.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Products workspace -->
+        <h3 class="data-workspace-heading">Products Workspace</h3>
+        <p>
+          The Products workspace uses an imported sample of more than 6,000
+          entries from the NVD Common Platform Enumeration (CPE) Dictionary.
+          Each CPE name is converted into a vendor, product, version, and
+          product type.
+        </p>
+
+        <div class="data-comparison">
+          <article class="data-origin data-origin-product">
+            <p class="origin-label">Public source</p>
+            <h4>Imported NVD product records</h4>
+            <p>A development sample of standardized product identifiers.</p>
+
+            <ul>
+              <li>Browse vendors, products, versions, and product types.</li>
+              <li>Each record keeps its original CPE name.</li>
+              <li>Read-only within VulnScope.</li>
+            </ul>
+          </article>
+
+          <article
+            class="data-origin data-origin-product data-origin-product-local"
+          >
+            <p class="origin-label">Your workspace</p>
+            <h4>Local product review records</h4>
+            <p>
+              Your own product records, exposure notes, and review statuses.
+            </p>
+
+            <ul>
+              <li>Create, read, edit, and delete your own records.</li>
+              <li>
+                Access is associated with the creating browser's workspace
+                cookie.
+              </li>
+              <li>Local changes leave the public NVD records unchanged.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Explain source independence. -->
+        <div class="data-note">
+          <p>
+            Public source information is kept separate from locally managed
+            records and review notes. Changes within VulnScope do not change
+            records published by NVD.
+          </p>
+        </div>
+
+        <!-- Official source references. -->
+        <div class="reference-links">
+          <a href="https://nvd.nist.gov/developers/vulnerabilities">
+            NVD Vulnerability Documentation
+          </a>
+          <a href="https://nvd.nist.gov/developers/products">
+            NVD Product Documentation
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Shared footer. -->
+    <footer id="site-footer" class="site-footer"></footer>
+  </body>
+</html>

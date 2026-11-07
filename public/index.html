@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Page metadata and responsive sizing. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore cybersecurity vulnerabilities and technology products with VulnScope."
+    />
+    <title>VulnScope — Home</title>
+
+    <!-- Browser tab branding. -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Load the shared font. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles and layout module. -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="module" src="/js/layout.js"></script>
+    <script type="module" src="/js/home-search.js"></script>
+
+    <!-- Homepage styles. -->
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <!-- Keyboard shortcut to content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header populated by layout.js. -->
+    <header id="site-header" class="site-header"></header>
+
+    <!-- Homepage content. -->
+    <main id="main-content" class="page-container" tabindex="-1">
+      <!-- Minimal banner wallpaper. -->
+      <section class="home-hero" aria-labelledby="hero-heading">
+        <p class="hero-eyebrow">Cybersecurity, made approachable</p>
+
+        <h1 id="hero-heading">
+          <span class="hero-line">Understand your technology.</span>
+          <span class="hero-line">Understand its risks.</span>
+        </h1>
+
+        <p class="page-intro">
+          Explore vulnerabilities and technology products, understand the
+          details, and organize your security reviews.
+        </p>
+      </section>
+
+      <!-- Shared search entry point. -->
+      <section class="home-search" aria-labelledby="search-heading">
+        <h2 id="search-heading">What would you like to explore?</h2>
+
+        <form
+          id="home-search-form"
+          action="/vulnerabilities.html"
+          method="get"
+          role="search"
+          aria-labelledby="search-heading"
+        >
+          <fieldset>
+            <legend class="visually-hidden">Search public records</legend>
+
+            <div class="search-controls">
+              <!-- Reveal the selector when routing is ready. -->
+              <div id="home-search-scope-field" class="search-scope" hidden>
+                <label for="home-search-scope">Search in</label>
+                <select id="home-search-scope">
+                  <option value="vulnerabilities">Vulnerabilities</option>
+                  <option value="products">Products</option>
+                </select>
+              </div>
+
+              <!-- Keep one shared query field. -->
+              <div class="search-query">
+                <label id="home-query-label" for="home-query">
+                  CVE ID or vulnerability keyword
+                </label>
+                <input
+                  id="home-query"
+                  name="q"
+                  type="search"
+                  placeholder="For example: a CVE ID or Firefox"
+                  maxlength="200"
+                  aria-describedby="search-availability"
+                />
+              </div>
+
+              <button class="button button-primary" type="submit">
+                Search
+              </button>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- Explain the selected search. -->
+        <p id="search-availability" class="search-note" aria-live="polite">
+          Search public vulnerabilities by CVE ID or keywords, including product
+          and vendor names mentioned in their descriptions.
+        </p>
+      </section>
+
+      <!-- Introduce independent workspaces. -->
+      <section aria-labelledby="workspaces-heading">
+        <h2 id="workspaces-heading">Two ways to explore</h2>
+
+        <div class="home-workspaces">
+          <article class="info-card">
+            <h3>Vulnerability Awareness &amp; Triage</h3>
+            <p>
+              Explore publicly disclosed vulnerabilities, review severity and
+              technical details, and organize your vulnerability reviews.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Product &amp; Technology Workspace</h3>
+            <p>
+              Explore vendors, products, and versions, and maintain your
+              product-security reviews.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer populated by layout.js. -->
+    <footer id="site-footer" class="site-footer"></footer>
+  </body>
+</html>

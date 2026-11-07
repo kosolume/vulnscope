@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Vulnerability page metadata. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore CVEs and organize vulnerability reviews with VulnScope."
+    />
+    <title>Vulnerabilities — VulnScope</title>
+
+    <!-- Browser tab branding. -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Load the shared font. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles and layout module. -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="module" src="/js/layout.js"></script>
+
+    <!-- Load vulnerability records. -->
+    <script type="module" src="/js/vulnerabilities.js"></script>
+
+    <!-- Workspace styles. -->
+    <link rel="stylesheet" href="/css/workspace.css" />
+
+    <link rel="stylesheet" href="/css/vulnerability-overview.css" />
+  </head>
+
+  <body>
+    <!-- Keyboard shortcut to content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header populated by layout.js. -->
+    <header id="site-header" class="site-header"></header>
+
+    <!-- Vulnerability workspace. -->
+    <main id="main-content" class="page-container" tabindex="-1">
+      <!-- Workspace introduction. -->
+      <div class="workspace-heading">
+        <div>
+          <h1>Vulnerabilities</h1>
+          <p class="page-intro">
+            Explore publicly disclosed vulnerabilities and organize your
+            security reviews.
+          </p>
+        </div>
+
+        <!-- Open the local record form. -->
+        <a class="button button-primary" href="/vulnerability-form.html">
+          Add Vulnerability
+        </a>
+      </div>
+
+      <!-- Explain control availability. -->
+      <p id="workspace-availability" class="workspace-note">
+        Search public CVEs or your local records by keywords and severity. Use
+        Add Vulnerability to create a guest workspace record. Public CVEs are
+        read-only.
+      </p>
+
+      <!-- Filter-aware workspace overview. -->
+      <section
+        id="vulnerability-overview"
+        class="vulnerability-overview"
+        aria-labelledby="overview-heading"
+        aria-busy="true"
+      >
+        <p id="overview-context" class="overview-context">
+          Imported NVD records
+        </p>
+        <h2 id="overview-heading">Workspace Overview</h2>
+
+        <div class="overview-layout">
+          <dl id="overview-metrics" class="overview-metrics"></dl>
+
+          <div>
+            <h3 id="overview-chart-heading" class="overview-chart-heading">
+              Severity distribution
+            </h3>
+            <ul
+              id="overview-chart"
+              class="overview-chart"
+              aria-labelledby="overview-chart-heading"
+            ></ul>
+          </div>
+        </div>
+
+        <p id="overview-status" class="overview-status" role="status">
+          Loading the matching-record overview…
+        </p>
+      </section>
+
+      <div class="workspace-grid">
+        <!-- Search and filter sidebar. -->
+        <aside class="workspace-panel" aria-labelledby="filters-heading">
+          <h2 id="filters-heading">Search &amp; Filter</h2>
+
+          <form
+            id="vulnerability-filters"
+            role="search"
+            aria-labelledby="filters-heading"
+          >
+            <!-- Search imported records. -->
+            <fieldset
+              id="filter-controls"
+              aria-describedby="workspace-availability"
+            >
+              <legend class="visually-hidden">Vulnerability filters</legend>
+
+              <div class="form-field">
+                <label for="vulnerability-query">CVE ID or keyword</label>
+                <input
+                  id="vulnerability-query"
+                  name="q"
+                  type="search"
+                  placeholder="Search vulnerabilities"
+                  maxlength="200"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="record-scope">Records</label>
+                <select id="record-scope" name="scope">
+                  <option value="public">Public CVEs</option>
+                  <option value="mine">My local records</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="severity-filter">Severity</label>
+                <select id="severity-filter" name="severity">
+                  <option value="">All severities</option>
+                  <option value="CRITICAL">Critical</option>
+                  <option value="HIGH">High</option>
+                  <option value="MEDIUM">Medium</option>
+                  <option value="LOW">Low</option>
+                  <option value="NONE">None</option>
+                  <option value="UNKNOWN">Not available</option>
+                </select>
+              </div>
+
+              <!-- Local review-status filter. -->
+              <div id="triage-status-field" class="form-field" hidden>
+                <label for="triage-status-filter">Review status</label>
+                <select id="triage-status-filter" name="triageStatus" disabled>
+                  <option value="">All review statuses</option>
+                  <option value="new">New</option>
+                  <option value="in-review">In review</option>
+                  <option value="resolved">Resolved</option>
+                </select>
+              </div>
+
+              <button class="button button-primary" type="submit">
+                Apply Filters
+              </button>
+              <!-- Restore the full results list. -->
+              <button
+                id="clear-filters"
+                class="button button-secondary filter-reset"
+                type="button"
+              >
+                Clear Filters
+              </button>
+            </fieldset>
+          </form>
+        </aside>
+
+        <!-- Vulnerability results panel. -->
+        <section class="workspace-panel" aria-labelledby="results-heading">
+          <div class="results-heading">
+            <h2 id="results-heading" tabindex="-1">Vulnerability Records</h2>
+            <span id="results-count" class="results-count"
+              >Loading records</span
+            >
+          </div>
+
+          <!-- Paging above the records. -->
+          <nav
+            class="results-pagination results-pagination-top"
+            aria-label="Vulnerability pages, top"
+          >
+            <button
+              class="button button-secondary"
+              type="button"
+              data-previous-page
+              aria-controls="vulnerability-results"
+              disabled
+            >
+              Previous
+            </button>
+
+            <span data-page-summary>No page loaded</span>
+
+            <button
+              class="button button-secondary"
+              type="button"
+              data-next-page
+              aria-controls="vulnerability-results"
+              disabled
+            >
+              Next
+            </button>
+          </nav>
+
+          <!-- Keyboard-accessible table scrolling. -->
+          <div
+            id="vulnerability-results"
+            class="table-scroll"
+            role="region"
+            aria-labelledby="results-heading"
+            aria-busy="true"
+            tabindex="0"
+          >
+            <table class="records-table">
+              <caption id="records-caption" class="visually-hidden">
+                Public vulnerability records
+              </caption>
+
+              <!-- Headings change with the selected collection. -->
+              <thead>
+                <tr>
+                  <th id="record-identifier-heading" scope="col">CVE ID</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Description</th>
+                  <th id="record-date-heading" scope="col">Published (UTC)</th>
+                </tr>
+              </thead>
+
+              <tbody id="vulnerability-records">
+                <!-- Replace when records load. -->
+                <tr>
+                  <td colspan="4" class="empty-state">
+                    Loading public CVEs...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Announce request progress. -->
+          <p id="results-status" class="workspace-note" role="status">
+            Loading public CVEs...
+          </p>
+
+          <button
+            id="results-retry"
+            class="button button-secondary results-retry"
+            type="button"
+            hidden
+          >
+            Try again
+          </button>
+
+          <!-- Distinguish source and local records. -->
+          <p class="workspace-note">
+            Public source information stays separate from your locally managed
+            records and review notes.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer populated by layout.js. -->
+    <footer id="site-footer" class="site-footer"></footer>
+  </body>
+</html>
